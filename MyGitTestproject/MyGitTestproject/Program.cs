@@ -32,6 +32,7 @@ namespace MyGitTestproject
             {//Invalid och inte unvalid... hallå.
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nInvalid email adress\n");
+                Console.WriteLine("\nUnvalid email adress\n");
             }
 
             Console.ResetColor();
