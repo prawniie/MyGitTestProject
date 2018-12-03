@@ -7,6 +7,38 @@ namespace MyGitTestproject
     {
         static void Main(string[] args)
         {
+
+            CheckForValidEmail();
+            //CheckForValidZipcode();
+
+
+        }
+
+        private static void CheckForValidEmail()
+        {
+            Console.Write("Enter your e-mail adress: ");
+            string email = Console.ReadLine();
+
+            string pattern = @"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+";
+
+            Match match = Regex.Match(email, pattern);
+
+            if (match.Success)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\nValid email adress\n");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nUnvalid email adress\n");
+            }
+
+            Console.ResetColor();
+        }
+
+        private static void CheckForValidZipcode()
+        {
             string zipCode = "444 44";
             string pattern = @"\d\d\d\s\d\d";
 
@@ -17,7 +49,6 @@ namespace MyGitTestproject
             }
             else
                 Console.WriteLine("Invalid zipcode");
-
         }
     }
 }
